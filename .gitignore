@@ -1,0 +1,33 @@
+
+# --- Секреты (НИКОГДА не коммитить) ---
+.env
+.env.*
+!.env.example
+*.env.backup-*
+
+# --- Зависимости и сборки Node ---
+node_modules/
+.next/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- Собранный лаунчер / артефакты сборки ---
+build/
+# раскомментируй, если НЕ нужен exe в репе:
+# dist/
+
+# --- Логи и бэкапы ---
+*.log
+*.backup
+*.bak
+
+# --- Системный мусор Windows/IDE ---
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
