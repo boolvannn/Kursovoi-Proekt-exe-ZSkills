@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DiplomLauncher")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcc045f658e807aa5d23c8d25150ae25312c6d49")]
 [assembly: System.Reflection.AssemblyProductAttribute("DiplomLauncher")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DiplomLauncher")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
