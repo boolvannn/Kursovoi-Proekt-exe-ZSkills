@@ -1,0 +1,373 @@
+import { Lesson, LessonType } from '@/types/domain';
+import { getApiBaseUrl, getApiOrigin } from './base-url';
+import { apiRequest } from './client';
+
+export type LessonLecturePayload = {
+  content: Record<string, unknown>;
+};
+
+export type LessonTestPayload = {
+  passingScore?: number;
+  allowMultipleAttempts?: boolean;
+  maxAttempts?: number;
+  timeLimitMinutes?: number;
+};
+
+export type LessonWebinarPayload = {
+  meetingLink: string;
+  scheduledAt: string;
+  durationMinutes?: number;
+};
+
+export type CreateLessonPayload = {
+  moduleId: string;
+  type: LessonType;
+  title: string;
+  description?: string;
+  orderIndex?: number;
+  isPublished?: boolean;
+  lecture?: LessonLecturePayload;
+  test?: LessonTestPayload;
+  webinar?: LessonWebinarPayload;
+};
+
+export type UpdateLessonPayload = {
+  type?: LessonType;
+  title?: string;
+  description?: string;
+  orderIndex?: number;
+  isPublished?: boolean;
+  lecture?: LessonLecturePayload;
+  test?: LessonTestPayload;
+  webinar?: Partial<LessonWebinarPayload>;
+};
+
+export type ReorderLessonItem = {
+  lessonId: string;
+  orderIndex: number;
+};
+
+export type ReorderLessonsPayload = {
+  moduleId: string;
+  items: ReorderLessonItem[];
+};
+
+export type CreateLectureLessonPayload = {
+  moduleId: string;
+  title: string;
+  description?: string;
+  orderIndex?: number;
+  isPublished?: boolean;
+  content: Record<string, unknown>;
+};
+
+export type UpdateLectureLessonPayload = {
+  title?: string;
+  description?: string;
+  orderIndex?: number;
+  isPublished?: boolean;
+  content?: Record<string, unknown>;
+};
+
+export type CreateWebinarLessonPayload = {
+  moduleId: string;
+  title: string;
+  description?: string;
+  orderIndex?: number;
+  isPublished?: boolean;
+  meetingLink: string;
+  scheduledAt: string;
+  durationMinutes?: number;
+};
+
+export type UpdateWebinarLessonPayload = {
+  title?: string;
+  description?: string;
+  orderIndex?: number;
+  isPublished?: boolean;
+  meetingLink?: string;
+  scheduledAt?: string;
+  durationMinutes?: number;
+};
+
+export type StudentLessonProgress = {
+  id: string;
+  status: 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETED';
+  startedAt?: string | null;
+  lastViewedAt?: string | null;
+  completedAt?: string | null;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type StudentLectureProgress = StudentLessonProgress;
+
+export type StudentLecturePayload = {
+  lesson: Lesson & {
+    module: {
+      id: string;
+      title: string;
+      courseId: string;
+      course: {
+        id: string;
+        title: string;
+      };
+    };
+  };
+  progress: StudentLessonProgress | null;
+};
+
+export type StudentWebinarPayload = {
+  lesson: Lesson & {
+    module: {
+      id: string;
+      title: string;
+      courseId: string;
+      course: {
+        id: string;
+        title: string;
+      };
+    };
+  };
+  progress: StudentLessonProgress | null;
+};
+
+export type LectureFilesPayload = {
+  lessonId: string;
+  attachments: string[];
+};
+
+export type LessonTransferQuestionType =
+  | 'SINGLE_CHOICE'
+  | 'MULTIPLE_CHOICE'
+  | 'FREE_TEXT'
+  | 'MATCHING'
+  | 'ORDERING';
+
+export type LessonTransferPayload =
+  | {
+      format: 'zskills.lesson';
+      version: 1;
+      lessonType: 'lecture';
+      lesson: {
+        title: string;
+        description?: string;
+        orderIndex?: number;
+        isPublished?: boolean;
+      };
+      lecture: {
+        content: Record<string, unknown>;
+      };
+    }
+  | {
+      format: 'zskills.lesson';
+      version: 1;
+      lessonType: 'test';
+      lesson: {
+        title: string;
+        description?: string;
+        orderIndex?: number;
+        isPublished?: boolean;
+      };
+      test: {
+        settings: {
+          passingScore?: number;
+          allowMultipleAttempts?: boolean;
+          maxAttempts?: number;
+          timeLimitMinutes?: number;
+        };
+        questions: Array<{
+          text: string;
+          explanation?: string;
+          type: LessonTransferQuestionType;
+          points?: number;
+          options?: Array<{
+            text: string;
+            isCorrect: boolean;
+          }>;
+          acceptedAnswers?: string[];
+          matchingPairs?: Array<{
+            left: string;
+            right: string;
+          }>;
+          orderingItems?: string[];
+        }>;
+      };
+    };
+
+export const lessonsApi = {
+  getById: (lessonId: string, token: string) =>
+    apiRequest<Lesson>(`/lessons/${lessonId}`, { token }),
+
+  listByModule: (moduleId: string, token: string) =>
+    apiRequest<Lesson[]>(`/lessons/module/${moduleId}`, { token }),
+
+  listStudentModuleLessons: (moduleId: string, token: string) =>
+    apiRequest<Lesson[]>(`/lessons/student/module/${moduleId}`, { token }),
+
+  getTeacherLectureById: (lessonId: string, token: string) =>
+    apiRequest<Lesson>(`/lessons/lecture/${lessonId}`, { token }),
+
+  getStudentLectureById: (lessonId: string, token: string) =>
+    apiRequest<StudentLecturePayload>(`/lessons/student/lecture/${lessonId}`, {
+      token,
+    }),
+
+  getTeacherWebinarById: (lessonId: string, token: string) =>
+    apiRequest<Lesson>(`/lessons/webinar/${lessonId}`, { token }),
+
+  getStudentWebinarById: (lessonId: string, token: string) =>
+    apiRequest<StudentWebinarPayload>(`/lessons/student/webinar/${lessonId}`, {
+      token,
+    }),
+
+  create: (token: string, payload: CreateLessonPayload) =>
+    apiRequest<Lesson>('/lessons', {
+      method: 'POST',
+      token,
+      body: payload,
+    }),
+
+  createLecture: (token: string, payload: CreateLectureLessonPayload) =>
+    apiRequest<Lesson>('/lessons/lecture', {
+      method: 'POST',
+      token,
+      body: payload,
+    }),
+
+  createWebinar: (token: string, payload: CreateWebinarLessonPayload) =>
+    apiRequest<Lesson>('/lessons/webinar', {
+      method: 'POST',
+      token,
+      body: payload,
+    }),
+
+  update: (token: string, lessonId: string, payload: UpdateLessonPayload) =>
+    apiRequest<Lesson>(`/lessons/${lessonId}`, {
+      method: 'PATCH',
+      token,
+      body: payload,
+    }),
+
+  updateLecture: (
+    token: string,
+    lessonId: string,
+    payload: UpdateLectureLessonPayload,
+  ) =>
+    apiRequest<Lesson>(`/lessons/lecture/${lessonId}`, {
+      method: 'PATCH',
+      token,
+      body: payload,
+    }),
+
+  updateWebinar: (
+    token: string,
+    lessonId: string,
+    payload: UpdateWebinarLessonPayload,
+  ) =>
+    apiRequest<Lesson>(`/lessons/webinar/${lessonId}`, {
+      method: 'PATCH',
+      token,
+      body: payload,
+    }),
+
+  remove: (token: string, lessonId: string) =>
+    apiRequest<{ success: true }>(`/lessons/${lessonId}`, {
+      method: 'DELETE',
+      token,
+    }),
+
+  reorder: (token: string, payload: ReorderLessonsPayload) =>
+    apiRequest<Lesson[]>('/lessons/reorder', {
+      method: 'PATCH',
+      token,
+      body: payload,
+    }),
+
+  exportLesson: (token: string, lessonId: string) =>
+    apiRequest<LessonTransferPayload>(`/lessons/${lessonId}/export`, {
+      token,
+    }),
+
+  importLessonToModule: (
+    token: string,
+    moduleId: string,
+    payload: LessonTransferPayload,
+  ) =>
+    apiRequest<Lesson>(`/lessons/module/${moduleId}/import`, {
+      method: 'POST',
+      token,
+      body: {
+        payload,
+      },
+    }),
+
+  uploadLectureFiles: async (token: string, lessonId: string, files: File[]) => {
+    const formData = new FormData();
+    for (const file of files) {
+      formData.append('files', file);
+    }
+
+    const response = await fetch(`${getApiBaseUrl()}/lectures/${lessonId}/files`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error(await extractErrorMessage(response));
+    }
+
+    return response.json() as Promise<LectureFilesPayload>;
+  },
+
+  deleteLectureFile: async (token: string, lessonId: string, fileUrl: string) => {
+    const response = await fetch(`${getApiBaseUrl()}/lectures/${lessonId}/files`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ fileUrl }),
+    });
+
+    if (!response.ok) {
+      throw new Error(await extractErrorMessage(response));
+    }
+
+    return response.json() as Promise<LectureFilesPayload>;
+  },
+};
+
+export function resolveStaticFileUrl(fileUrl: string) {
+  if (!fileUrl) return '#';
+  if (fileUrl.startsWith('http://') || fileUrl.startsWith('https://')) {
+    return fileUrl;
+  }
+
+  try {
+    const origin = getApiOrigin();
+    if (!origin) return fileUrl;
+    return `${origin}${fileUrl.startsWith('/') ? fileUrl : `/${fileUrl}`}`;
+  } catch {
+    return fileUrl;
+  }
+}
+
+async function extractErrorMessage(response: Response) {
+  const fallback = `Request failed with status ${response.status}`;
+
+  try {
+    const payload = (await response.json()) as {
+      message?: string | string[];
+    };
+
+    if (!payload?.message) return fallback;
+    if (Array.isArray(payload.message)) return payload.message.join(', ');
+    return payload.message;
+  } catch {
+    return fallback;
+  }
+}
