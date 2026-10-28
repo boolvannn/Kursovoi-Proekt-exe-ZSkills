@@ -124,12 +124,52 @@ export function ModuleLessonsManager({
     ) {
       return false;
     }
+    if (
+      createState.type === 'TEST' &&
+      createState.allowMultipleAttempts &&
+      createState.maxAttempts === '1'
+    ) {
+      return false;
+    }
 
     return true;
   }, [createState]);
 
+  const canSaveEdit = useMemo(() => {
+    if (!editState) return false;
+    if (editState.title.trim().length < 2) return false;
+    if (
+      editState.type === 'WEBINAR' &&
+      (!editState.webinarMeetingLink.trim() || !editState.webinarScheduledAt)
+    ) {
+      return false;
+    }
+    if (
+      editState.type === 'TEST' &&
+      editState.allowMultipleAttempts &&
+      editState.maxAttempts === '1'
+    ) {
+      return false;
+    }
+
+    return true;
+  }, [editState]);
+
   const submitCreate = async () => {
-    if (!accessToken || !canCreate) return;
+    if (!accessToken) return;
+
+    if (
+      createState.type === 'TEST' &&
+      createState.allowMultipleAttempts &&
+      createState.maxAttempts === '1'
+    ) {
+      setError(
+        'Если разрешено несколько попыток, максимальное количество попыток должно быть больше 1 или не задано.',
+      );
+      return;
+    }
+
+    if (!canCreate) return;
 
     setSaving(true);
     setError(null);
@@ -184,15 +224,7 @@ export function ModuleLessonsManager({
   };
 
   const saveEdit = async () => {
-    if (!accessToken || !editState?.lessonId || editState.title.trim().length < 2) {
-      return;
-    }
-
-    if (
-      editState.type === 'WEBINAR' &&
-      (!editState.webinarMeetingLink.trim() || !editState.webinarScheduledAt)
-    ) {
-      setError('Для вебинара нужны ссылка и дата/время');
+    if (!accessToken || !canSaveEdit) {
       return;
     }
 
@@ -732,11 +764,40 @@ function LessonTypeFields({ state, onChange, idPrefix }: LessonTypeFieldsProps) 
           <input
             type="checkbox"
             checked={state.allowMultipleAttempts}
-            onChange={(event) => update('allowMultipleAttempts', event.target.checked)}
+            onChange={(event) => {
+              const checked = event.target.checked;
+              update('allowMultipleAttempts', checked);
+              if (!checked) {
+                update('maxAttempts', '');
+              }
+            }}
             className="h-4 w-4 rounded border-gray-300 text-emerald-500 focus:ring-emerald-500"
           />
           Разрешить несколько попыток
         </label>
+      </div>
+      <div className="sm:col-span-2">
+        <p className="mb-1 text-xs font-medium text-gray-500">
+          Макс. попыток (необязательно, если несколько)
+        </p>
+        <Input
+          type="number"
+          min={state.allowMultipleAttempts ? 2 : 1}
+          disabled={!state.allowMultipleAttempts}
+          value={state.maxAttempts}
+          onChange={(event) => update('maxAttempts', event.target.value)}
+          placeholder="Без ограничений"
+        />
+        {!state.allowMultipleAttempts && state.maxAttempts && (
+          <p className="text-xs text-red-500 mt-1">
+            При выключенном «Несколько попыток» лимит игнорируется (1 попытка).
+          </p>
+        )}
+        {state.allowMultipleAttempts && state.maxAttempts === '1' && (
+          <p className="text-xs text-red-500 mt-1">
+            Если разрешено несколько попыток, максимум должен быть больше 1 или не задан.
+          </p>
+        )}
       </div>
     );
   }

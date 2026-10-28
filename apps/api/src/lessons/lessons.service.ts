@@ -1435,12 +1435,22 @@ export class LessonsService {
     }
 
     if (type === LessonType.TEST) {
+      const allowMultiple =
+        payload.test?.allowMultipleAttempts ?? true;
+      const maxAttempts = payload.test?.maxAttempts;
+
+      if (allowMultiple && maxAttempts === 1) {
+        throw new BadRequestException(
+          'Если разрешено несколько попыток, максимальное количество попыток должно быть больше 1 или не задано',
+        );
+      }
+
       await tx.testLesson.create({
         data: {
           lessonId,
           passingScore: payload.test?.passingScore,
-          allowMultipleAttempts: payload.test?.allowMultipleAttempts ?? true,
-          maxAttempts: payload.test?.maxAttempts,
+          allowMultipleAttempts: allowMultiple,
+          maxAttempts: maxAttempts,
           timeLimitMinutes: payload.test?.timeLimitMinutes,
         },
       });
@@ -1490,19 +1500,29 @@ export class LessonsService {
     }
 
     if (type === LessonType.TEST && payload.test) {
+      const allowMultiple =
+        payload.test.allowMultipleAttempts ?? true;
+      const maxAttempts = payload.test.maxAttempts;
+
+      if (allowMultiple && maxAttempts === 1) {
+        throw new BadRequestException(
+          'Если разрешено несколько попыток, максимальное количество попыток должно быть больше 1 или не задано',
+        );
+      }
+
       await tx.testLesson.upsert({
         where: { lessonId },
         create: {
           lessonId,
           passingScore: payload.test.passingScore,
-          allowMultipleAttempts: payload.test.allowMultipleAttempts ?? true,
-          maxAttempts: payload.test.maxAttempts,
+          allowMultipleAttempts: allowMultiple,
+          maxAttempts: maxAttempts,
           timeLimitMinutes: payload.test.timeLimitMinutes,
         },
         update: {
           passingScore: payload.test.passingScore,
-          allowMultipleAttempts: payload.test.allowMultipleAttempts,
-          maxAttempts: payload.test.maxAttempts,
+          allowMultipleAttempts: allowMultiple,
+          maxAttempts: maxAttempts,
           timeLimitMinutes: payload.test.timeLimitMinutes,
         },
       });
