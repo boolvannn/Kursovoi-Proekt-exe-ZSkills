@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   title: 'ZSkills LMS',
   description:
     'Современная образовательная платформа для студентов и преподавателей.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

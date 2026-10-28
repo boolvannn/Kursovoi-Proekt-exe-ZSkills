@@ -15,6 +15,7 @@ py -3 -m PyInstaller --clean --noconsole --onefile `
   --collect-all customtkinter `
   --hidden-import launcher_core `
   --hidden-import launcher_ui `
+  --icon $Root\logo.ico `
   $LauncherSource
 
 Write-Host "Launcher exe: $(Join-Path $DistDir 'DiplomLauncher.exe')"
