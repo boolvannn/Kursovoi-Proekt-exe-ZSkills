@@ -741,16 +741,6 @@ function LessonTypeFields({ state, onChange, idPrefix }: LessonTypeFieldsProps) 
           />
         </div>
         <div>
-          <p className="mb-1 text-xs font-medium text-gray-500">Макс. попыток (необязательно)</p>
-          <Input
-            type="number"
-            min={1}
-            value={state.maxAttempts}
-            onChange={(event) => update('maxAttempts', event.target.value)}
-            placeholder="Без ограничений"
-          />
-        </div>
-        <div>
           <p className="mb-1 text-xs font-medium text-gray-500">Лимит времени, мин (необязательно)</p>
           <Input
             type="number"
@@ -760,7 +750,30 @@ function LessonTypeFields({ state, onChange, idPrefix }: LessonTypeFieldsProps) 
             placeholder="Без лимита"
           />
         </div>
-        <label className="flex items-center gap-2 pt-6 text-xs text-gray-500">
+        <div className="sm:col-span-2">
+          <p className="mb-1 text-xs font-medium text-gray-500">
+            Макс. попыток (необязательно, если несколько)
+          </p>
+          <Input
+            type="number"
+            min={state.allowMultipleAttempts ? 2 : 1}
+            disabled={!state.allowMultipleAttempts}
+            value={state.maxAttempts}
+            onChange={(event) => update('maxAttempts', event.target.value)}
+            placeholder="Без ограничений"
+          />
+          {!state.allowMultipleAttempts && state.maxAttempts && (
+            <p className="text-xs text-red-500 mt-1">
+              При выключенном «Несколько попыток» лимит игнорируется (1 попытка).
+            </p>
+          )}
+          {state.allowMultipleAttempts && state.maxAttempts === '1' && (
+            <p className="text-xs text-red-500 mt-1">
+              Если разрешено несколько попыток, максимум должен быть больше 1 или не задан.
+            </p>
+          )}
+        </div>
+        <label className="flex items-center gap-2 pt-6 text-xs text-gray-500 sm:col-span-2">
           <input
             type="checkbox"
             checked={state.allowMultipleAttempts}
@@ -775,29 +788,6 @@ function LessonTypeFields({ state, onChange, idPrefix }: LessonTypeFieldsProps) 
           />
           Разрешить несколько попыток
         </label>
-      </div>
-      <div className="sm:col-span-2">
-        <p className="mb-1 text-xs font-medium text-gray-500">
-          Макс. попыток (необязательно, если несколько)
-        </p>
-        <Input
-          type="number"
-          min={state.allowMultipleAttempts ? 2 : 1}
-          disabled={!state.allowMultipleAttempts}
-          value={state.maxAttempts}
-          onChange={(event) => update('maxAttempts', event.target.value)}
-          placeholder="Без ограничений"
-        />
-        {!state.allowMultipleAttempts && state.maxAttempts && (
-          <p className="text-xs text-red-500 mt-1">
-            При выключенном «Несколько попыток» лимит игнорируется (1 попытка).
-          </p>
-        )}
-        {state.allowMultipleAttempts && state.maxAttempts === '1' && (
-          <p className="text-xs text-red-500 mt-1">
-            Если разрешено несколько попыток, максимум должен быть больше 1 или не задан.
-          </p>
-        )}
       </div>
     );
   }
