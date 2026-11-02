@@ -1,0 +1,306 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram id="education-platform-use-cases" name="Рис. 2 — Диаграмма вариантов использования">
+    <mxGraphModel dx="1434" dy="844" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-JSK-iARllmJ0TlH24lM-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;labelBorderColor=none;jumpStyle=line;flowAnimation=0;shadow=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="admin" target="u_auth">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="406" y="319" as="sourcePoint" />
+            <mxPoint x="201" y="311" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title" value="Образовательная платформа" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="320" width="600" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" value="Администратор" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="395" y="169" width="55" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-7" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" target="u_auth" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="140" as="targetPoint" />
+            <mxPoint x="689" y="342" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-14" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.049;entryY=0.274;entryDx=0;entryDy=0;endArrow=none;startFill=0;entryPerimeter=0;" parent="1" target="u_course_analytics" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="480" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="teacher" value="Преподаватель" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="677.5" y="347.5" width="50" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="g_courses" value="Управление курсами и учебными материалами" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;verticalAlign=top;spacingTop=8;fontSize=14;fontStyle=1;opacity=40;absoluteArcSize=1;" parent="1" vertex="1">
+          <mxGeometry x="800" y="230" width="380" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="g_learning" value="Доступ к обучению" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;verticalAlign=top;spacingTop=8;fontSize=14;fontStyle=1;opacity=40;absoluteArcSize=1;" parent="1" vertex="1">
+          <mxGeometry x="20" y="500" width="520" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="g_import" value="Импорт и экспорт учебных материалов" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;verticalAlign=top;spacingTop=8;fontSize=14;fontStyle=1;opacity=40;" parent="1" vertex="1">
+          <mxGeometry x="71" y="393" width="379" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="g_analytics" value="Аналитика и результаты" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;verticalAlign=top;spacingTop=8;fontSize=14;fontStyle=1;opacity=40;absoluteArcSize=1;" parent="1" vertex="1">
+          <mxGeometry x="710" y="585" width="420" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="g_module" value="&amp;nbsp; &amp;nbsp;Модуль аналитики&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;verticalAlign=top;spacingTop=8;fontSize=14;fontStyle=1;opacity=40;arcSize=8;align=left;" parent="1" vertex="1">
+          <mxGeometry x="750" y="50" width="290" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="u_auth" value="Авторизация и аутентификация" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="512.5" y="180.25" width="165" height="87.5" as="geometry" />
+        </mxCell>
+        <mxCell id="u_validation" value="Проверка данных nпользователя" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="525" y="58.75" width="140" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="u_csv" value="Импорт студентов из CSV-файла" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="475" y="293" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u_csv_validate" value="Обработка и валидация данных" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="479" y="403" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="u_courses" value="Создание, редактирование и удаление курсов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="846" y="276" width="145" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="u_modules" value="Управление модулями и уроками курса" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="850" y="343" width="135" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u_content" value="Добавление контента урока (текст, файлы, тесты, вебинары)" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="840" y="412.5" width="155" height="67.5" as="geometry" />
+        </mxCell>
+        <mxCell id="u_files" value="Прикрепление файлов (Word, Excel, PDF, презентации)" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="1000" y="325" width="125" height="71.25" as="geometry" />
+        </mxCell>
+        <mxCell id="u_course_students" value="Добавление и удаление студентов из курсов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="830" y="507.5" width="135" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="u_manage_students_teacher" value="Управление студентами" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="1005" y="490" width="115" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="u_json" value="Импорт\экспорт лекций и тестов (JSON)" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="1055" y="410" width="115" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="u_available" value="Просмотр доступных\курсов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="390" y="518" width="125" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="u_lessons" value="Просмотр модулей, уроков и лекционных материалов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="200" y="545" width="155" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="u_attachments" value="Просмотр прикреплённых файлов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="30" y="545" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="u_take" value="Прохождение курсов\nи тестирования" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="390" y="610" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u_save_results" value="Сохранение результатов тестирования" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="205" y="630" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u_webinars" value="Участие в вебинарах" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="30" y="635" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u_results_student" value="Просмотр результатов&lt;div&gt;тестирования&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="395" y="690" width="125" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="u_progress" value="Отслеживание прогресса и успеваемости" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="210" y="710" width="135" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="u_json_export" value="Экспорт\Импорт лекций и тестов в JSON" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="273" y="435" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="u_file_build" value="Формирование файла" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="81" y="433" width="100" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="u_results_teacher" value="Просмотр результатов тестирования" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="714" y="695" width="120" height="55.5" as="geometry" />
+        </mxCell>
+        <mxCell id="u_course_analytics" value="Просмотр аналитики прохождения курсов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="815" y="626" width="130" height="69.5" as="geometry" />
+        </mxCell>
+        <mxCell id="u_risk" value="Выявление студентов из зоны риска" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="995" y="633.25" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="u_material_search" value="Поиск, фильтрация и сортировка учебных материалов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="855" y="704.5" width="150" height="70.5" as="geometry" />
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-17" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="u_perf" target="u_reports" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u_perf" value="Анализ успеваемости студентов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="760" y="97.5" width="105" height="57.5" as="geometry" />
+        </mxCell>
+        <mxCell id="u_reports" value="Отчёты по курсам и группам" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="910" y="80" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="u_risk_group" value="Выявление группы риска" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="910" y="155" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e_admin_5" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;" parent="1" target="u_csv" edge="1" source="admin">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="270" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_student_1" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;" parent="1" target="u_available" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="550" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_student_2" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;" parent="1" target="u_take" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="592" y="576" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_student_3" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;" parent="1" target="u_results_student" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="593" y="605" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_teacher_1" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;" parent="1" source="teacher" target="u_courses" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_teacher_2" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;" parent="1" source="teacher" target="u_modules" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_teacher_3" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="teacher" target="u_content" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_auth" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_auth" target="u_validation" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_csv" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_csv" target="u_csv_validate" edge="1">
+          <mxGeometry x="0.0339" y="11" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ext_files" value="&amp;lt;extend&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_content" target="u_files" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_json" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_content" target="u_json" edge="1">
+          <mxGeometry x="-0.0364" y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc_lessons" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_available" target="u_lessons" edge="1">
+          <mxGeometry x="-0.1543" y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ext_attach" value="&amp;lt;extend&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_lessons" target="u_attachments" edge="1">
+          <mxGeometry x="-0.3045" y="16" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ext_webinar" value="&amp;lt;extend&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_lessons" target="u_webinars" edge="1">
+          <mxGeometry x="-0.1426" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc_save" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_take" target="u_save_results" edge="1">
+          <mxGeometry x="-0.0941" y="11" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc_progress" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;" parent="1" source="u_results_student" target="u_progress" edge="1">
+          <mxGeometry x="-0.0444" y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc_file" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="u_json_export" target="u_file_build" edge="1">
+          <mxGeometry x="-0.0571" y="9" relative="1" as="geometry">
+            <mxPoint x="441.1295098318934" y="469.6751347135755" as="sourcePoint" />
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ext_risk" value="&amp;lt;extend&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="u_risk" target="u_course_analytics" edge="1">
+          <mxGeometry x="-0.0621" y="-13" relative="1" as="geometry">
+            <mxPoint x="1290" y="668" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ext_risk_group" value="&amp;lt;extend&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="u_perf" target="u_risk_group" edge="1">
+          <mxGeometry x="-0.0966" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BP_5IgO_q-xmfEibMDMJ-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="u_json_export" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="592" y="511" as="sourcePoint" />
+            <mxPoint x="640" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-8" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;exitX=0.372;exitY=1.006;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="u_content" target="u_course_students" edge="1">
+          <mxGeometry x="-0.1527" y="32" relative="1" as="geometry">
+            <mxPoint x="1004" y="451" as="sourcePoint" />
+            <mxPoint x="1080" y="444" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-9" value="&amp;lt;include&amp;gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="u_content" target="u_manage_students_teacher" edge="1">
+          <mxGeometry x="-0.0364" y="10" relative="1" as="geometry">
+            <mxPoint x="1014" y="461" as="sourcePoint" />
+            <mxPoint x="1090" y="454" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-11" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;entryX=0.609;entryY=0.991;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="u_auth" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="618" y="484" as="sourcePoint" />
+            <mxPoint x="535" y="477" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="student" value="Студент" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="595" y="500" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-15" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.288;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" parent="1" target="u_results_teacher" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="710" y="480" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-16" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;entryX=0.067;entryY=0.252;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="u_material_search" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="480" as="sourcePoint" />
+            <mxPoint x="845" y="588" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="780" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-18" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=0;shadow=0;startFill=1;jumpStyle=line;strokeColor=default;" parent="1" source="u_course_students" target="student" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-19" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" source="g_learning" target="g_learning" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcqzQY71akf98Byg05E3-21" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.348;entryY=0.984;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;startFill=0;" parent="1" target="u_perf" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="728" y="378" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g_users" value="Управление пользователями и ролями" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;verticalAlign=top;spacingTop=8;fontSize=14;fontStyle=1;absoluteArcSize=1;strokeColor=light-dark(#808080, #ededed);" parent="1" vertex="1">
+          <mxGeometry x="96" y="50" width="240" height="335" as="geometry" />
+        </mxCell>
+        <mxCell id="u_teacher_manage" value="Добавление, редактирование и удаление преподавателей" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="140.37" y="106.25" width="151.25" height="68.75" as="geometry" />
+        </mxCell>
+        <mxCell id="u_roles" value="Управление ролями и учётными записями" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;" parent="1" vertex="1">
+          <mxGeometry x="136" y="245" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u_user_search" value="Поиск, фильтрация и сортировка пользователей" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;resizeWidth=1;resizeHeight=1;resizable=1;" parent="1" vertex="1">
+          <mxGeometry x="138.5" y="310" width="155" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u_student_manage" value="Добавление, редактирование и удаление студентов" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.2;fontSize=12;spacing=4;treeMoving=1;" parent="1" vertex="1">
+          <mxGeometry x="138.19" y="180" width="155.62" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e_admin_1" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="admin" target="u_teacher_manage" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_admin_2" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="admin" target="u_student_manage" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_admin_3" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="admin" target="u_roles" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_admin_4" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.2;endArrow=none;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="admin" target="u_user_search" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
