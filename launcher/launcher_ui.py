@@ -62,7 +62,7 @@ class LauncherApp(ctk.CTk):
         self.protocol("WM_DELETE_WINDOW", self.on_close)
 
         # Иконка окна лаунчера (логотип проекта)
-        _icon_path = AppConfig.ProjectRoot / "logo.ico"
+        _icon_path = AppConfig.ProjectRoot / "assets" / "brand" / "logo.ico"
         if _icon_path.exists():
             self.iconbitmap(str(_icon_path))
 
